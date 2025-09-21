@@ -64,10 +64,10 @@
                 <span class="text-xl font-bold text-slate-800 tracking-tight">Wellness Programs Hub</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
+                <a href="#hero" class="text-slate-600 hover:text-teal-600 transition-colors">About Us</a>
                 <a href="#programs" class="text-slate-600 hover:text-teal-600 transition-colors">Programs</a>
-                <a href="#how" class="text-slate-600 hover:text-teal-600 transition-colors">How it works</a>
+                <a href="#journey" class="text-slate-600 hover:text-teal-600 transition-colors">Journey to Wellness</a>
                 <a href="#resources" class="text-slate-600 hover:text-teal-600 transition-colors">Resources</a>
-                <a href="#faq" class="text-slate-600 hover:text-teal-600 transition-colors">FAQ</a>
                 <a href="#contact" class="text-slate-600 hover:text-teal-600 transition-colors">Contact</a>
             </nav>
             <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="hidden md:inline-block bg-teal-500 text-white font-semibold px-5 py-2 rounded-full hover:bg-teal-600 transition-all shadow-sm hover:shadow-md">
@@ -79,10 +79,10 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#hero" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">About Us</a>
             <a href="#programs" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Programs</a>
-            <a href="#how" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">How it works</a>
+            <a href="#journey" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Journey to Wellness</a>
             <a href="#resources" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Resources</a>
-            <a href="#faq" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">FAQ</a>
             <a href="#contact" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Contact</a>
             <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="block bg-teal-500 text-white font-semibold px-5 py-2 rounded-full hover:bg-teal-600 transition-all text-center mt-2">
                 Visit Luminous Rehab
@@ -92,7 +92,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative py-20 md:py-32 overflow-hidden">
+        <section id="hero" class="relative py-20 md:py-32 overflow-hidden">
             <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative">
                 <div class="fade-in-up">
@@ -159,8 +159,8 @@
             </div>
         </section>
 
-        <!-- How It Works Section -->
-        <section id="how" class="py-20 md:py-28">
+        <!-- Your Journey Section -->
+        <section id="journey" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto fade-in-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Your Journey to Wellness</h2>
@@ -257,85 +257,81 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="py-20 md:py-28">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">FAQ</h2>
-                </div>
-                <div class="max-w-3xl mx-auto mt-12 space-y-4 fade-in-up" style="transition-delay: 200ms;">
-                    <!-- FAQ Items -->
-                    <div class="faq-item bg-white rounded-xl border border-slate-200">
-                        <button class="faq-question flex justify-between items-center w-full p-6 text-left">
-                            <span class="text-lg font-semibold text-slate-800">Is this medical advice?</span>
-                            <i data-lucide="chevron-down" class="faq-icon transition-transform"></i>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="p-6 pt-0 text-slate-600">No. This site is for general education. For diagnosis or treatment, consult a licensed clinician.</p>
-                        </div>
-                    </div>
-                     <div class="faq-item bg-white rounded-xl border border-slate-200">
-                        <button class="faq-question flex justify-between items-center w-full p-6 text-left">
-                            <span class="text-lg font-semibold text-slate-800">Do I need special equipment?</span>
-                            <i data-lucide="chevron-down" class="faq-icon transition-transform"></i>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                             <p class="p-6 pt-0 text-slate-600">A mat, a stable chair, and a light resistance band are enough to start.</p>
-                        </div>
-                    </div>
-                     <div class="faq-item bg-white rounded-xl border border-slate-200">
-                        <button class="faq-question flex justify-between items-center w-full p-6 text-left">
-                            <span class="text-lg font-semibold text-slate-800">How fast will I see results?</span>
-                            <i data-lucide="chevron-down" class="faq-icon transition-transform"></i>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                             <p class="p-6 pt-0 text-slate-600">Consistency matters most. Many people feel improvements in comfort and confidence in a few weeks.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
+        <!-- Contact & FAQ Section -->
         <section id="contact" class="py-20 md:py-28 bg-slate-900 text-white">
-            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                 <div class="fade-in-up">
-                     <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Contact & next steps</h2>
-                     <p class="mt-4 text-lg text-slate-300">
-                         Ready for guided care? Go to <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="text-teal-400 hover:underline">Luminous Rehab</a> for official contact details and booking.
-                     </p>
-                     <p class="mt-2 text-slate-400">External links open in a new tab.</p>
-                 </div>
-                 <div class="bg-white p-8 rounded-2xl shadow-2xl relative fade-in-up" style="transition-delay: 200ms;">
-                     <form id="contact-form">
-                         <div class="space-y-6">
-                             <div>
-                                <label for="name" class="font-semibold text-slate-700">Name</label>
-                                <input type="text" id="name" name="name" required class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800">
-                             </div>
-                             <div>
-                                <label for="email" class="font-semibold text-slate-700">Email</label>
-                                <input type="email" id="email" name="email" required class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800">
-                             </div>
-                             <div>
-                                <label for="message" class="font-semibold text-slate-700">Message</label>
-                                <textarea id="message" name="message" rows="4" class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800"></textarea>
-                             </div>
-                             <button type="submit" class="w-full bg-teal-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-600 transition-all shadow-sm">
-                                Send
-                             </button>
-                         </div>
-                     </form>
-                     <div id="form-submitted-message" class="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center opacity-0 transform scale-95 pointer-events-none">
-                         <div class="text-center p-8">
-                            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto">
-                                <i data-lucide="check" class="w-10 h-10 text-teal-600"></i>
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto fade-in-up mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Have Questions? Get in Touch</h2>
+                    <p class="mt-4 text-lg text-slate-300">Review our frequently asked questions. If you can't find the answer, feel free to send us a message.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- FAQ Column -->
+                    <div class="fade-in-up">
+                        <h3 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h3>
+                        <div class="space-y-4">
+                            <div class="faq-item bg-slate-800 rounded-xl border border-slate-700">
+                                <button class="faq-question flex justify-between items-center w-full p-6 text-left">
+                                    <span class="text-lg font-semibold text-white">Is this medical advice?</span>
+                                    <i data-lucide="chevron-down" class="faq-icon transition-transform text-slate-400"></i>
+                                </button>
+                                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                    <p class="p-6 pt-0 text-slate-300">No. This site is for general education. For diagnosis or treatment, consult a licensed clinician.</p>
+                                </div>
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-800 mt-4">Thanks!</h3>
-                            <p class="text-slate-600 mt-2">Demo only. For appointments, visit Luminous Rehab.</p>
-                         </div>
-                     </div>
-                 </div>
+                            <div class="faq-item bg-slate-800 rounded-xl border border-slate-700">
+                                <button class="faq-question flex justify-between items-center w-full p-6 text-left">
+                                    <span class="text-lg font-semibold text-white">Do I need special equipment?</span>
+                                    <i data-lucide="chevron-down" class="faq-icon transition-transform text-slate-400"></i>
+                                </button>
+                                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                    <p class="p-6 pt-0 text-slate-300">A mat, a stable chair, and a light resistance band are enough to start.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item bg-slate-800 rounded-xl border border-slate-700">
+                                <button class="faq-question flex justify-between items-center w-full p-6 text-left">
+                                    <span class="text-lg font-semibold text-white">How fast will I see results?</span>
+                                    <i data-lucide="chevron-down" class="faq-icon transition-transform text-slate-400"></i>
+                                </button>
+                                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                    <p class="p-6 pt-0 text-slate-300">Consistency matters most. Many people feel improvements in comfort and confidence in a few weeks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Column -->
+                    <div class="bg-white p-8 rounded-2xl shadow-2xl relative fade-in-up" style="transition-delay: 200ms;">
+                        <form id="contact-form">
+                            <div class="space-y-6">
+                                <div>
+                                   <label for="name" class="font-semibold text-slate-700">Name</label>
+                                   <input type="text" id="name" name="name" required class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800">
+                                </div>
+                                <div>
+                                   <label for="email" class="font-semibold text-slate-700">Email</label>
+                                   <input type="email" id="email" name="email" required class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800">
+                                </div>
+                                <div>
+                                   <label for="message" class="font-semibold text-slate-700">Message</label>
+                                   <textarea id="message" name="message" rows="4" class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-teal-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-600 transition-all shadow-sm">
+                                   Send
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-submitted-message" class="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center opacity-0 transform scale-95 pointer-events-none">
+                            <div class="text-center p-8">
+                               <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto">
+                                   <i data-lucide="check" class="w-10 h-10 text-teal-600"></i>
+                               </div>
+                               <h3 class="text-2xl font-bold text-slate-800 mt-4">Thanks!</h3>
+                               <p class="text-slate-600 mt-2">Demo only. For appointments, visit Luminous Rehab.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
