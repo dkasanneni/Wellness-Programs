@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Wellness Programs Hub – HomeHealHub‑style single‑file site
+       Static, accessible, mobile‑first, SEO‑ready, GitHub Pages friendly. -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wellness Programs Hub | Move Better. Feel Better.</title>
+  <meta name="description" content="Discover simple, evidence‑informed wellness programs for mobility, posture, strength, balance, and recovery. Educational content with clear next steps." />
+  <link rel="canonical" href="https://<your-username>.github.io/wellness/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Social cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Wellness Programs Hub" />
+  <meta property="og:description" content="Short, practical programs you can do at home—mobility, posture, strength, balance, recovery." />
+  <meta property="og:url" content="https://<your-username>.github.io/wellness/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1609947017136-3c64f86a3bb3?w=1600" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0f172a; --muted:#475569; --brand:#0ea5e9; --accent:#10b981; --border:#e5e7eb; --shade:#f8fafc; --radius:14px; --maxw:1160px
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial;line-height:1.6;color:var(--fg);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none}
+    a:focus-visible{outline:3px solid rgba(14,165,233,.35);border-radius:8px}
+    img{max-width:100%;height:auto}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:clamp(16px,2.2vw,28px)}
+
+    .topbar{background:#0b1220;color:#e2e8f0;font-size:.9rem}
+    .topbar .container{display:flex;gap:.75rem;justify-content:space-between;align-items:center}
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:.75rem;align-items:center}
+    .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#0284c7)}
+    .brand h1{font-size:1.05rem;margin:0}
+    .menu{display:flex;gap:1rem}
+    .menu a{color:var(--fg)}
+
+    .hero{background:radial-gradient(1200px 420px at 12% -10%, rgba(14,165,233,.12), transparent 60%), var(--shade);border-bottom:1px solid var(--border)}
+    .hero-grid{display:grid;gap:1.25rem}
+    @media(min-width:900px){.hero-grid{grid-template-columns:1.2fr .8fr}}
+    .hero h2{font-size:clamp(1.6rem,3.5vw,2.6rem);line-height:1.2;margin:.25rem 0}
+    .lead{color:var(--muted);max-width:62ch}
+    .actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+    .cta{display:inline-block;background:var(--brand);color:#fff;padding:.8rem 1.05rem;border-radius:12px;font-weight:700}
+    .cta.secondary{background:var(--accent)}
+
+    section{padding-block:clamp(28px,4vw,56px);border-bottom:1px solid var(--border)}
+    h3{margin:.25rem 0 1rem 0}
+    .grid{display:grid;gap:1rem}
+    @media(min-width:760px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    .card{border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:#fff}
+    .badge{display:inline-block;background:#e0f2fe;color:#075985;padding:.25rem .5rem;border-radius:999px;font-size:.75rem}
+    .muted{color:var(--muted)}
+
+    .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 1rem}
+    .chip{border:1px solid var(--border);padding:.4rem .7rem;border-radius:999px;background:#fff}
+
+    details{border:1px solid var(--border);padding:12px 14px;border-radius:12px;background:#fff}
+    details+details{margin-top:.6rem}
+
+    footer{background:#0b1220;color:#e2e8f0}
+    footer a{color:#93c5fd}
+  </style>
+
+  <!-- JSON‑LD: WebSite + ItemList (Programs) + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Wellness Programs Hub",
+    "url": "https://<your-username>.github.io/wellness/",
+    "potentialAction": {"@type": "SearchAction","target": "https://<your-username>.github.io/wellness/?q={search_term}","query-input": "required name=search_term"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Wellness Programs",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Mobility & Flexibility"},
+      {"@type":"ListItem","position":2,"name":"Posture & Ergonomics"},
+      {"@type":"ListItem","position":3,"name":"Foundational Strength"},
+      {"@type":"ListItem","position":4,"name":"Balance & Fall Readiness"},
+      {"@type":"ListItem","position":5,"name":"Pain Self‑Management"},
+      {"@type":"ListItem","position":6,"name":"Recovery & Stress"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is this medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. This site is for general education only. For diagnosis or treatment, consult a licensed clinician."}},
+      {"@type":"Question","name":"What equipment do I need?","acceptedAnswer":{"@type":"Answer","text":"A mat, a stable chair, and a light resistance band are usually enough to begin."}},
+      {"@type":"Question","name":"How often should I practice?","acceptedAnswer":{"@type":"Answer","text":"Start with 10–15 minutes, 2–3 times per week, and increase gradually as tolerated."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+
+  <div class="topbar" role="note">
+    <div class="container">
+      <span>Educational template. Not medical advice.</span>
+      <span>Looking for a clinic? <a href="https://luminousrehab.com" target="_blank" rel="noopener">Visit Luminous Rehab</a></span>
+    </div>
+  </div>
+
+  <header role="banner">
+    <div class="container nav">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <h1>Wellness Programs Hub</h1>
+      </div>
+      <nav aria-label="Primary">
+        <div class="menu">
+          <a href="#programs">Programs</a>
+          <a href="#how">How it works</a>
+          <a href="#resources">Resources</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="badge" aria-hidden="true">Wellness • Rehab Principles • Home‑friendly</p>
+          <h2 id="hero-title">Simple programs to move better—at home or on the go.</h2>
+          <p class="lead">Choose a focus area, follow short routines, and build habits that support daily life. Clear, plain‑language guidance—no jargon.</p>
+          <div class="actions">
+            <a class="cta" href="#programs">Explore Programs</a>
+            <a class="cta secondary" href="https://luminousrehab.com" target="_blank" rel="noopener">Visit Luminous Rehab</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600" alt="Person doing gentle stretches on a mat at home" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS DIRECTORY -->
+    <section id="programs" aria-labelledby="programs-title">
+      <h3 id="programs-title">Featured wellness programs</h3>
+      <p class="muted">Start light (10–15 minutes), 2–3× per week. Progress gradually and track how you feel.</p>
+
+      <div class="filters" aria-label="Program filters">
+        <span class="chip" role="button" tabindex="0" aria-pressed="true">All</span>
+        <span class="chip" role="button" tabindex="0">Mobility</span>
+        <span class="chip" role="button" tabindex="0">Posture</span>
+        <span class="chip" role="button" tabindex="0">Strength</span>
+        <span class="chip" role="button" tabindex="0">Balance</span>
+        <span class="chip" role="button" tabindex="0">Recovery</span>
+      </div>
+
+      <div class="grid cols-3" role="list">
+        <article class="card" role="listitem" aria-labelledby="p1"><h4 id="p1">Mobility & Flexibility</h4><p>Short routines for neck, shoulders, hips, and back using gentle mobility and isometrics.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Start routine</a></article>
+        <article class="card" role="listitem" aria-labelledby="p2"><h4 id="p2">Posture & Ergonomics</h4><p>Workstation setup, micro‑breaks, and movement snacks to reduce strain while working or studying.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">See tips</a></article>
+        <article class="card" role="listitem" aria-labelledby="p3"><h4 id="p3">Foundational Strength</h4><p>Beginner‑friendly sequences for core, hips, and upper back—supporting lifting and balance.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Try plan</a></article>
+        <article class="card" role="listitem" aria-labelledby="p4"><h4 id="p4">Balance & Fall Readiness</h4><p>Simple drills to improve steadiness, step confidence, and obstacle navigation.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Build balance</a></article>
+        <article class="card" role="listitem" aria-labelledby="p5"><h4 id="p5">Pain Self‑Management</h4><p>Education on pacing, flare‑ups, and graded activity. <em>Not a diagnosis or treatment plan.</em></p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Learn pacing</a></article>
+        <article class="card" role="listitem" aria-labelledby="p6"><h4 id="p6">Recovery & Stress</h4><p>Breathing, relaxation, and sleep‑hygiene practices for better recovery between sessions.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Recover better</a></article>
+      </div>
+      <p class="muted">Prefer guided care? <a href="https://luminousrehab.com" target="_blank" rel="noopener">Connect with Luminous Rehab</a>.</p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" aria-labelledby="how-title">
+      <h3 id="how-title">How it works</h3>
+      <div class="grid cols-3">
+        <div class="card"><strong>1) Pick a focus</strong><p>Choose mobility, posture, strength, balance, or recovery.</p></div>
+        <div class="card"><strong>2) Start small</strong><p>10–15 minutes per session, 2–3× weekly; add time slowly.</p></div>
+        <div class="card"><strong>3) Track & adjust</strong><p>Note energy, sleep, and soreness to guide next steps.</p></div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" aria-labelledby="resources-title">
+      <h3 id="resources-title">Helpful resources</h3>
+      <div class="grid cols-3">
+        <article class="card"><h4>Desk Setup Checklist</h4><p class="muted">Seat height, monitor level, and movement breaks.</p><a href="#">Read guide</a></article>
+        <article class="card"><h4>5‑Minute Hip Reset</h4><p class="muted">Gentle opener for sitting stiffness—no equipment.</p><a href="#">Try routine</a></article>
+        <article class="card"><h4>Balance Basics</h4><p class="muted">Simple progressions to build confidence.</p><a href="#">Start here</a></article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
+      <h3 id="faq-title">FAQ</h3>
+      <details><summary><strong>Is this medical advice?</strong></summary><p>No. This site is for general education. For diagnosis or treatment, consult a licensed clinician.</p></details>
+      <details><summary><strong>Do I need special equipment?</strong></summary><p>A mat, a stable chair, and a light resistance band are enough to start.</p></details>
+      <details><summary><strong>How fast will I see results?</strong></summary><p>Consistency matters most. Many people feel improvements in comfort and confidence in a few weeks.</p></details>
+    </section>
+
+    <!-- CONTACT / OUTLINKS -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h3 id="contact-title">Contact & next steps</h3>
+      <div class="grid cols-2">
+        <form class="card" method="post" action="#" onsubmit="event.preventDefault();alert('Thanks! Demo only. For appointments, visit Luminous Rehab.');">
+          <label for="name">Name</label>
+          <input id="name" name="name" required style="width:100%;padding:.7rem;border:1px solid var(--border);border-radius:12px" />
+          <label for="email" style="display:block;margin-top:.5rem">Email</label>
+          <input id="email" type="email" name="email" required style="width:100%;padding:.7rem;border:1px solid var(--border);border-radius:12px" />
+          <label for="msg" style="display:block;margin-top:.5rem">Message</label>
+          <textarea id="msg" name="message" rows="4" style="width:100%;padding:.7rem;border:1px solid var(--border);border-radius:12px"></textarea>
+          <button class="cta" style="margin-top:.75rem" type="submit">Send</button>
+          <p class="muted" style="margin:.5rem 0 0">For clinical appointments, visit <a href="https://luminousrehab.com" target="_blank" rel="noopener">luminousrehab.com</a>.</p>
+        </form>
+        <div class="card">
+          <p><strong>Ready for guided care?</strong></p>
+          <p>Go to <a href="https://luminousrehab.com" target="_blank" rel="noopener">Luminous Rehab</a> for official contact details and booking.</p>
+          <p class="muted">External links open in a new tab.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Wellness Programs Hub. Educational content only. All trademarks belong to their owners.</p>
+      <p class="muted">This site links to <a href="https://luminousrehab.com" target="_blank" rel="noopener">luminousrehab.com</a> for additional information.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
