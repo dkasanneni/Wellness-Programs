@@ -279,6 +279,22 @@
         </section>
     </main>
 
+    <!-- Program Detail Modal -->
+    <div id="program-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="modal-panel" class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 relative transform scale-95 transition-all duration-300">
+            <button id="close-modal-button" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 transition-colors">
+                <i data-lucide="x"></i>
+            </button>
+            <div id="modal-icon-container" class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-5">
+                <!-- Icon will be injected here -->
+            </div>
+            <h3 id="modal-title" class="text-2xl font-bold text-slate-800">Modal Title</h3>
+            <div id="modal-content" class="mt-4 text-slate-600 space-y-4">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
@@ -291,7 +307,7 @@
         // --- LUCIDE ICONS ---
         lucide.createIcons();
 
-        // --- DYNAMIC DATA ---
+        // --- DYNAMIC DATA & ELEMENTS ---
         document.getElementById('year').textContent = new Date().getFullYear();
         
         const programs = [
@@ -304,7 +320,14 @@
         ];
 
         const programGrid = document.getElementById('program-grid');
+        const programModal = document.getElementById('program-modal');
+        const modalPanel = document.getElementById('modal-panel');
+        const closeModalButton = document.getElementById('close-modal-button');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const modalIconContainer = document.getElementById('modal-icon-container');
 
+        // --- FUNCTIONS ---
         function renderPrograms(filter = 'all') {
             programGrid.innerHTML = '';
             const filteredPrograms = filter === 'all' ? programs : programs.filter(p => p.category === filter);
@@ -321,21 +344,38 @@
                     </div>
                     <h3 class="text-xl font-bold text-slate-800">${program.title}</h3>
                     <p class="mt-3 text-slate-600">${program.description}</p>
-                    <a href="#" class="inline-block mt-6 text-teal-600 font-semibold group">
+                    <a href="#" class="program-cta inline-block mt-6 text-teal-600 font-semibold group" data-id="${program.id}">
                         ${program.cta}
                         <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
                     </a>
                 `;
                 programGrid.appendChild(card);
             });
-            lucide.createIcons(); // Re-render icons after adding them to the DOM
-            // Trigger animation for newly added cards
+            lucide.createIcons();
             setTimeout(() => {
                  document.querySelectorAll('.program-card.fade-in-up').forEach(el => el.classList.add('visible'));
             }, 10);
         }
 
-        // --- INTERACTIVITY ---
+        function openProgramModal(program) {
+            modalTitle.textContent = program.title;
+            modalContent.innerHTML = `<p>${program.description}</p><p class="mt-4 text-sm text-slate-500"><em>This is a demo. Full routine instructions, videos, and tips would appear here.</em></p>`;
+            modalIconContainer.innerHTML = `<i data-lucide="${program.icon}" class="w-8 h-8 text-teal-600"></i>`;
+            lucide.createIcons();
+            
+            programModal.classList.remove('pointer-events-none', 'opacity-0');
+            modalPanel.classList.remove('scale-95');
+        }
+
+        function closeProgramModal() {
+            programModal.classList.add('opacity-0');
+            modalPanel.classList.add('scale-95');
+            setTimeout(() => {
+                programModal.classList.add('pointer-events-none');
+            }, 300);
+        }
+
+        // --- INTERACTIVITY & EVENT LISTENERS ---
 
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -349,17 +389,35 @@
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const filter = button.dataset.filter;
-                
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('active', 'bg-teal-500', 'text-white');
-                    btn.classList.add('bg-white', 'text-slate-600');
-                });
-
+                filterButtons.forEach(btn => btn.classList.remove('active', 'bg-teal-500', 'text-white'));
                 button.classList.add('active', 'bg-teal-500', 'text-white');
-                button.classList.remove('bg-white', 'text-slate-600');
-                
                 renderPrograms(filter);
             });
+        });
+        
+        // Program Modal Logic
+        programGrid.addEventListener('click', (e) => {
+            const ctaButton = e.target.closest('.program-cta');
+            if (ctaButton) {
+                e.preventDefault();
+                const programId = parseInt(ctaButton.dataset.id, 10);
+                const program = programs.find(p => p.id === programId);
+                if (program) {
+                    openProgramModal(program);
+                }
+            }
+        });
+
+        closeModalButton.addEventListener('click', closeProgramModal);
+        programModal.addEventListener('click', (e) => {
+            if (e.target === programModal) {
+                closeProgramModal();
+            }
+        });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !programModal.classList.contains('pointer-events-none')) {
+                closeProgramModal();
+            }
         });
 
         // FAQ Accordion
@@ -368,10 +426,8 @@
             const question = item.querySelector('.faq-question');
             const answer = item.querySelector('.faq-answer');
             const icon = item.querySelector('.faq-icon');
-
             question.addEventListener('click', () => {
                 const isOpen = item.classList.contains('open');
-                
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('open');
@@ -379,7 +435,6 @@
                         otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
                     }
                 });
-                
                 if (isOpen) {
                     item.classList.remove('open');
                     answer.style.maxHeight = '0px';
@@ -400,7 +455,6 @@
             formSubmittedMessage.style.opacity = '1';
             formSubmittedMessage.style.transform = 'scale(1)';
             formSubmittedMessage.style.pointerEvents = 'auto';
-
             setTimeout(() => {
                 formSubmittedMessage.style.opacity = '0';
                 formSubmittedMessage.style.transform = 'scale(0.95)';
@@ -419,12 +473,9 @@
         }, {
             threshold: 0.1
         });
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Initial render of programs
+        // --- INITIALIZATION ---
         renderPrograms();
 
     </script>
