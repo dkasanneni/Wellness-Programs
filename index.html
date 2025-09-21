@@ -345,6 +345,13 @@
             { id: 4, title: 'Balance & Fall Readiness', category: 'balance', superCategory: 'exercise', icon: 'scaling', description: 'Simple drills to improve steadiness, step confidence, and obstacle navigation.', cta: 'Build balance' },
             { id: 5, title: 'Pain Self-Management', category: 'recovery', superCategory: 'lifestyle', icon: 'shield-plus', description: 'Education on pacing, flare-ups, and graded activity. <em>Not a diagnosis or treatment plan.</em>', cta: 'Learn pacing' },
             { id: 6, title: 'Recovery & Stress', category: 'recovery', superCategory: 'lifestyle', icon: 'wind', description: 'Breathing, relaxation, and sleep-hygiene practices for better recovery between sessions.', cta: 'Recover better' },
+            { id: 7, title: 'Screenings & Measurements', category: 'assessment-sub', superCategory: 'assessment', icon: 'ruler', description: 'Track key health metrics like blood pressure, BMI, and body composition to establish a baseline.', cta: 'View Details' },
+            { id: 8, title: 'Fitness Evaluations', category: 'assessment-sub', superCategory: 'assessment', icon: 'activity', description: 'Assess your strength, flexibility, and cardiovascular endurance with guided tests.', cta: 'View Details' },
+            { id: 9, title: 'Lifestyle Surveys', category: 'assessment-sub', superCategory: 'assessment', icon: 'clipboard-list', description: 'Answer questionnaires about your nutrition, sleep, and stress to identify lifestyle patterns.', cta: 'View Details' },
+            { id: 10, title: 'Risk Assessments', category: 'assessment-sub', superCategory: 'assessment', icon: 'shield-alert', description: 'Evaluate potential health risks based on your history and lifestyle for proactive care.', cta: 'View Details' },
+            { id: 11, title: 'Stress Management', category: 'preventive-sub', superCategory: 'preventive', icon: 'brain-circuit', description: 'Learn techniques to manage daily stress, improve resilience, and enhance mental well-being.', cta: 'Learn More' },
+            { id: 12, title: 'Fall and Injury Prevention', category: 'preventive-sub', superCategory: 'preventive', icon: 'shield-half', description: 'Strategies and exercises to improve balance and awareness to reduce the risk of falls.', cta: 'Learn More' },
+            { id: 13, title: 'Nutrition and Healthy Eating', category: 'preventive-sub', superCategory: 'preventive', icon: 'carrot', description: 'Guidance on creating balanced meals and healthy eating habits to support your wellness goals.', cta: 'Learn More' },
         ];
 
         const programGrid = document.getElementById('program-grid');
@@ -515,11 +522,11 @@
         document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
         // --- INITIALIZATION ---
-        // Set default filter to 'exercise' on page load
-        const defaultFilterBox = document.querySelector('.service-filter-box[data-filter="exercise"]');
+        // Set default filter to 'assessment' on page load
+        const defaultFilterBox = document.querySelector('.service-filter-box[data-filter="assessment"]');
         if (defaultFilterBox) {
             defaultFilterBox.classList.add('active');
-            renderPrograms('exercise');
+            renderPrograms('assessment');
         } else {
             renderPrograms(''); // Render empty if default not found
         }
