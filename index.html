@@ -1,240 +1,432 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <!-- Wellness Programs Hub – HomeHealHub‑style single‑file site
-       Static, accessible, mobile‑first, SEO‑ready, GitHub Pages friendly. -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wellness Programs Hub | Move Better. Feel Better.</title>
-  <meta name="description" content="Discover simple, evidence‑informed wellness programs for mobility, posture, strength, balance, and recovery. Educational content with clear next steps." />
-  <link rel="canonical" href="https://<your-username>.github.io/wellness/" />
-  <meta name="robots" content="index,follow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device--width, initial-scale=1.0">
+    <title>Wellness Programs Hub | Move Better. Feel Better.</title>
+    <meta name="description" content="Discover simple, evidence-informed wellness programs for mobility, posture, strength, balance, and recovery.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Social cards -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Wellness Programs Hub" />
-  <meta property="og:description" content="Short, practical programs you can do at home—mobility, posture, strength, balance, recovery." />
-  <meta property="og:url" content="https://<your-username>.github.io/wellness/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1609947017136-3c64f86a3bb3?w=1600" />
-  <meta name="twitter:card" content="summary_large_image" />
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#ffffff; --fg:#0f172a; --muted:#475569; --brand:#0ea5e9; --accent:#10b981; --border:#e5e7eb; --shade:#f8fafc; --radius:14px; --maxw:1160px
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial;line-height:1.6;color:var(--fg);background:var(--bg)}
-    a{color:var(--brand);text-decoration:none}
-    a:focus-visible{outline:3px solid rgba(14,165,233,.35);border-radius:8px}
-    img{max-width:100%;height:auto}
-    .container{max-width:var(--maxw);margin-inline:auto;padding:clamp(16px,2.2vw,28px)}
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    .topbar{background:#0b1220;color:#e2e8f0;font-size:.9rem}
-    .topbar .container{display:flex;gap:.75rem;justify-content:space-between;align-items:center}
-    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border)}
-    .nav{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:.75rem;align-items:center}
-    .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#0284c7)}
-    .brand h1{font-size:1.05rem;margin:0}
-    .menu{display:flex;gap:1rem}
-    .menu a{color:var(--fg)}
-
-    .hero{background:radial-gradient(1200px 420px at 12% -10%, rgba(14,165,233,.12), transparent 60%), var(--shade);border-bottom:1px solid var(--border)}
-    .hero-grid{display:grid;gap:1.25rem}
-    @media(min-width:900px){.hero-grid{grid-template-columns:1.2fr .8fr}}
-    .hero h2{font-size:clamp(1.6rem,3.5vw,2.6rem);line-height:1.2;margin:.25rem 0}
-    .lead{color:var(--muted);max-width:62ch}
-    .actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
-    .cta{display:inline-block;background:var(--brand);color:#fff;padding:.8rem 1.05rem;border-radius:12px;font-weight:700}
-    .cta.secondary{background:var(--accent)}
-
-    section{padding-block:clamp(28px,4vw,56px);border-bottom:1px solid var(--border)}
-    h3{margin:.25rem 0 1rem 0}
-    .grid{display:grid;gap:1rem}
-    @media(min-width:760px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
-    .card{border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:#fff}
-    .badge{display:inline-block;background:#e0f2fe;color:#075985;padding:.25rem .5rem;border-radius:999px;font-size:.75rem}
-    .muted{color:var(--muted)}
-
-    .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 1rem}
-    .chip{border:1px solid var(--border);padding:.4rem .7rem;border-radius:999px;background:#fff}
-
-    details{border:1px solid var(--border);padding:12px 14px;border-radius:12px;background:#fff}
-    details+details{margin-top:.6rem}
-
-    footer{background:#0b1220;color:#e2e8f0}
-    footer a{color:#93c5fd}
-  </style>
-
-  <!-- JSON‑LD: WebSite + ItemList (Programs) + FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Wellness Programs Hub",
-    "url": "https://<your-username>.github.io/wellness/",
-    "potentialAction": {"@type": "SearchAction","target": "https://<your-username>.github.io/wellness/?q={search_term}","query-input": "required name=search_term"}
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Wellness Programs",
-    "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Mobility & Flexibility"},
-      {"@type":"ListItem","position":2,"name":"Posture & Ergonomics"},
-      {"@type":"ListItem","position":3,"name":"Foundational Strength"},
-      {"@type":"ListItem","position":4,"name":"Balance & Fall Readiness"},
-      {"@type":"ListItem","position":5,"name":"Pain Self‑Management"},
-      {"@type":"ListItem","position":6,"name":"Recovery & Stress"}
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"Is this medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. This site is for general education only. For diagnosis or treatment, consult a licensed clinician."}},
-      {"@type":"Question","name":"What equipment do I need?","acceptedAnswer":{"@type":"Answer","text":"A mat, a stable chair, and a light resistance band are usually enough to begin."}},
-      {"@type":"Question","name":"How often should I practice?","acceptedAnswer":{"@type":"Answer","text":"Start with 10–15 minutes, 2–3 times per week, and increase gradually as tolerated."}}
-    ]
-  }
-  </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        /* Custom styles for subtle animations and effects */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .form-submitted-message {
+            transition: opacity 0.3s, transform 0.3s;
+        }
+    </style>
 </head>
-<body>
-  <a class="skip-link" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+<body class="antialiased">
 
-  <div class="topbar" role="note">
-    <div class="container">
-      <span>Educational template. Not medical advice.</span>
-      <span>Looking for a clinic? <a href="https://luminousrehab.com" target="_blank" rel="noopener">Visit Luminous Rehab</a></span>
-    </div>
-  </div>
-
-  <header role="banner">
-    <div class="container nav">
-      <div class="brand">
-        <span class="logo" aria-hidden="true"></span>
-        <h1>Wellness Programs Hub</h1>
-      </div>
-      <nav aria-label="Primary">
-        <div class="menu">
-          <a href="#programs">Programs</a>
-          <a href="#how">How it works</a>
-          <a href="#resources">Resources</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+    <!-- Header -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-pulse"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.7-1.5L13.5 14l.5-2H21"/></svg>
+                </div>
+                <span class="text-xl font-bold text-slate-800 tracking-tight">Wellness Programs Hub</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#programs" class="text-slate-600 hover:text-teal-600 transition-colors">Programs</a>
+                <a href="#how" class="text-slate-600 hover:text-teal-600 transition-colors">How it works</a>
+                <a href="#resources" class="text-slate-600 hover:text-teal-600 transition-colors">Resources</a>
+                <a href="#faq" class="text-slate-600 hover:text-teal-600 transition-colors">FAQ</a>
+                <a href="#contact" class="text-slate-600 hover:text-teal-600 transition-colors">Contact</a>
+            </nav>
+            <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="hidden md:inline-block bg-teal-500 text-white font-semibold px-5 py-2 rounded-full hover:bg-teal-600 transition-all shadow-sm hover:shadow-md">
+                Visit Luminous Rehab
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-slate-600">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="container" role="main">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div>
-          <p class="badge" aria-hidden="true">Wellness • Rehab Principles • Home‑friendly</p>
-          <h2 id="hero-title">Simple programs to move better—at home or on the go.</h2>
-          <p class="lead">Choose a focus area, follow short routines, and build habits that support daily life. Clear, plain‑language guidance—no jargon.</p>
-          <div class="actions">
-            <a class="cta" href="#programs">Explore Programs</a>
-            <a class="cta secondary" href="https://luminousrehab.com" target="_blank" rel="noopener">Visit Luminous Rehab</a>
-          </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#programs" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Programs</a>
+            <a href="#how" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">How it works</a>
+            <a href="#resources" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Resources</a>
+            <a href="#faq" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">FAQ</a>
+            <a href="#contact" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Contact</a>
+            <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="block bg-teal-500 text-white font-semibold px-5 py-2 rounded-full hover:bg-teal-600 transition-all text-center mt-2">
+                Visit Luminous Rehab
+            </a>
         </div>
-        <div>
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600" alt="Person doing gentle stretches on a mat at home" />
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative py-20 md:py-32 overflow-hidden">
+            <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative">
+                <div class="fade-in-up">
+                    <span class="inline-block bg-teal-100 text-teal-700 text-sm font-semibold px-4 py-1 rounded-full mb-4">Wellness • Rehab Principles • Home-friendly</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight tracking-tighter">
+                        Simple programs to move better—at home or on the go.
+                    </h1>
+                    <p class="mt-6 text-lg text-slate-600 max-w-lg">
+                        Choose a focus area, follow short routines, and build habits that support daily life. Clear, plain-language guidance—no jargon.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="#programs" class="bg-teal-500 text-white font-semibold px-8 py-3 rounded-full hover:bg-teal-600 transition-all shadow-lg hover:shadow-teal-200 transform hover:-translate-y-1">
+                            Explore Programs
+                        </a>
+                        <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="bg-white text-slate-700 font-semibold px-8 py-3 rounded-full hover:bg-slate-100 transition-all shadow-sm border border-slate-200">
+                            Visit Luminous Rehab
+                        </a>
+                    </div>
+                </div>
+                <div class="fade-in-up" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600&q=80" alt="Person doing gentle stretches on a mat at home" class="rounded-3xl shadow-2xl shadow-slate-200 transform md:rotate-3">
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Featured wellness programs</h2>
+                    <p class="mt-4 text-lg text-slate-600">Start light (10–15 minutes), 2–3× per week. Progress gradually and track how you feel.</p>
+                </div>
+                
+                <div id="program-filters" class="flex justify-center flex-wrap gap-3 mt-10 fade-in-up" style="transition-delay: 200ms;">
+                    <button data-filter="all" class="filter-btn active bg-teal-500 text-white px-5 py-2 rounded-full font-semibold transition">All</button>
+                    <button data-filter="mobility" class="filter-btn bg-white text-slate-600 px-5 py-2 rounded-full font-semibold transition hover:bg-slate-100">Mobility</button>
+                    <button data-filter="posture" class="filter-btn bg-white text-slate-600 px-5 py-2 rounded-full font-semibold transition hover:bg-slate-100">Posture</button>
+                    <button data-filter="strength" class="filter-btn bg-white text-slate-600 px-5 py-2 rounded-full font-semibold transition hover:bg-slate-100">Strength</button>
+                    <button data-filter="balance" class="filter-btn bg-white text-slate-600 px-5 py-2 rounded-full font-semibold transition hover:bg-slate-100">Balance</button>
+                    <button data-filter="recovery" class="filter-btn bg-white text-slate-600 px-5 py-2 rounded-full font-semibold transition hover:bg-slate-100">Recovery</button>
+                </div>
+
+                <div id="program-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <!-- Program cards will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">How it works</h2>
+                    <p class="mt-4 text-lg text-slate-600">A simple, structured approach to building better habits.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 md:gap-12 mt-16 text-center">
+                    <div class="fade-in-up" style="transition-delay: 0ms;">
+                        <div class="bg-white p-6 rounded-full w-20 h-20 mx-auto flex items-center justify-center shadow-lg">
+                           <i data-lucide="crosshair" class="w-10 h-10 text-teal-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mt-6">1) Pick a focus</h3>
+                        <p class="mt-2 text-slate-600">Choose mobility, posture, strength, balance, or recovery.</p>
+                    </div>
+                    <div class="fade-in-up" style="transition-delay: 200ms;">
+                        <div class="bg-white p-6 rounded-full w-20 h-20 mx-auto flex items-center justify-center shadow-lg">
+                            <i data-lucide="move-up" class="w-10 h-10 text-teal-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mt-6">2) Start small</h3>
+                        <p class="mt-2 text-slate-600">10–15 minutes per session, 2–3× weekly; add time slowly.</p>
+                    </div>
+                     <div class="fade-in-up" style="transition-delay: 400ms;">
+                        <div class="bg-white p-6 rounded-full w-20 h-20 mx-auto flex items-center justify-center shadow-lg">
+                           <i data-lucide="clipboard-check" class="w-10 h-10 text-teal-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mt-6">3) Track & adjust</h3>
+                        <p class="mt-2 text-slate-600">Note energy, sleep, and soreness to guide next steps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Helpful resources</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 mt-12 fade-in-up" style="transition-delay: 200ms;">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-slate-800">Desk Setup Checklist</h3>
+                        <p class="mt-3 text-slate-600">Seat height, monitor level, and movement breaks.</p>
+                        <a href="#" class="inline-block mt-6 text-teal-600 font-semibold group">
+                            Read guide
+                            <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
+                        </a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-slate-800">5-Minute Hip Reset</h3>
+                        <p class="mt-3 text-slate-600">Gentle opener for sitting stiffness—no equipment.</p>
+                        <a href="#" class="inline-block mt-6 text-teal-600 font-semibold group">
+                            Try routine
+                            <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
+                        </a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-slate-800">Balance Basics</h3>
+                        <p class="mt-3 text-slate-600">Simple progressions to build confidence.</p>
+                        <a href="#" class="inline-block mt-6 text-teal-600 font-semibold group">
+                            Start here
+                            <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">FAQ</h2>
+                </div>
+                <div class="max-w-3xl mx-auto mt-12 space-y-4 fade-in-up" style="transition-delay: 200ms;">
+                    <!-- FAQ Items -->
+                    <div class="faq-item bg-white rounded-xl border border-slate-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left">
+                            <span class="text-lg font-semibold text-slate-800">Is this medical advice?</span>
+                            <i data-lucide="chevron-down" class="faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="p-6 pt-0 text-slate-600">No. This site is for general education. For diagnosis or treatment, consult a licensed clinician.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item bg-white rounded-xl border border-slate-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left">
+                            <span class="text-lg font-semibold text-slate-800">Do I need special equipment?</span>
+                            <i data-lucide="chevron-down" class="faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                             <p class="p-6 pt-0 text-slate-600">A mat, a stable chair, and a light resistance band are enough to start.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item bg-white rounded-xl border border-slate-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left">
+                            <span class="text-lg font-semibold text-slate-800">How fast will I see results?</span>
+                            <i data-lucide="chevron-down" class="faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                             <p class="p-6 pt-0 text-slate-600">Consistency matters most. Many people feel improvements in comfort and confidence in a few weeks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-28 bg-slate-900 text-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                 <div class="fade-in-up">
+                     <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Contact & next steps</h2>
+                     <p class="mt-4 text-lg text-slate-300">
+                         Ready for guided care? Go to <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="text-teal-400 hover:underline">Luminous Rehab</a> for official contact details and booking.
+                     </p>
+                     <p class="mt-2 text-slate-400">External links open in a new tab.</p>
+                 </div>
+                 <div class="bg-white p-8 rounded-2xl shadow-2xl relative fade-in-up" style="transition-delay: 200ms;">
+                     <form id="contact-form">
+                         <div class="space-y-6">
+                             <div>
+                                <label for="name" class="font-semibold text-slate-700">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800">
+                             </div>
+                             <div>
+                                <label for="email" class="font-semibold text-slate-700">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800">
+                             </div>
+                             <div>
+                                <label for="message" class="font-semibold text-slate-700">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none text-slate-800"></textarea>
+                             </div>
+                             <button type="submit" class="w-full bg-teal-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-600 transition-all shadow-sm">
+                                Send
+                             </button>
+                         </div>
+                     </form>
+                     <div id="form-submitted-message" class="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center opacity-0 transform scale-95 pointer-events-none">
+                         <div class="text-center p-8">
+                            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto">
+                                <i data-lucide="check" class="w-10 h-10 text-teal-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800 mt-4">Thanks!</h3>
+                            <p class="text-slate-600 mt-2">Demo only. For appointments, visit Luminous Rehab.</p>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            <p>&copy; <span id="year"></span> Wellness Programs Hub. Educational content only. All trademarks belong to their owners.</p>
+            <p class="text-sm mt-2">This site links to <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="hover:text-teal-600">luminousrehab.com</a> for additional information.</p>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- PROGRAMS DIRECTORY -->
-    <section id="programs" aria-labelledby="programs-title">
-      <h3 id="programs-title">Featured wellness programs</h3>
-      <p class="muted">Start light (10–15 minutes), 2–3× per week. Progress gradually and track how you feel.</p>
+    <script>
+        // --- LUCIDE ICONS ---
+        lucide.createIcons();
 
-      <div class="filters" aria-label="Program filters">
-        <span class="chip" role="button" tabindex="0" aria-pressed="true">All</span>
-        <span class="chip" role="button" tabindex="0">Mobility</span>
-        <span class="chip" role="button" tabindex="0">Posture</span>
-        <span class="chip" role="button" tabindex="0">Strength</span>
-        <span class="chip" role="button" tabindex="0">Balance</span>
-        <span class="chip" role="button" tabindex="0">Recovery</span>
-      </div>
+        // --- DYNAMIC DATA ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const programs = [
+            { id: 1, title: 'Mobility & Flexibility', category: 'mobility', icon: 'move-3d', description: 'Short routines for neck, shoulders, hips, and back using gentle mobility and isometrics.', cta: 'Start routine' },
+            { id: 2, title: 'Posture & Ergonomics', category: 'posture', icon: 'user-check', description: 'Workstation setup, micro-breaks, and movement snacks to reduce strain while working or studying.', cta: 'See tips' },
+            { id: 3, title: 'Foundational Strength', category: 'strength', icon: 'anchor', description: 'Beginner-friendly sequences for core, hips, and upper back—supporting lifting and balance.', cta: 'Try plan' },
+            { id: 4, title: 'Balance & Fall Readiness', category: 'balance', icon: 'scaling', description: 'Simple drills to improve steadiness, step confidence, and obstacle navigation.', cta: 'Build balance' },
+            { id: 5, title: 'Pain Self-Management', category: 'recovery', icon: 'clipboard-heart', description: 'Education on pacing, flare-ups, and graded activity. <em>Not a diagnosis or treatment plan.</em>', cta: 'Learn pacing' },
+            { id: 6, title: 'Recovery & Stress', category: 'recovery', icon: 'wind', description: 'Breathing, relaxation, and sleep-hygiene practices for better recovery between sessions.', cta: 'Recover better' },
+        ];
 
-      <div class="grid cols-3" role="list">
-        <article class="card" role="listitem" aria-labelledby="p1"><h4 id="p1">Mobility & Flexibility</h4><p>Short routines for neck, shoulders, hips, and back using gentle mobility and isometrics.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Start routine</a></article>
-        <article class="card" role="listitem" aria-labelledby="p2"><h4 id="p2">Posture & Ergonomics</h4><p>Workstation setup, micro‑breaks, and movement snacks to reduce strain while working or studying.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">See tips</a></article>
-        <article class="card" role="listitem" aria-labelledby="p3"><h4 id="p3">Foundational Strength</h4><p>Beginner‑friendly sequences for core, hips, and upper back—supporting lifting and balance.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Try plan</a></article>
-        <article class="card" role="listitem" aria-labelledby="p4"><h4 id="p4">Balance & Fall Readiness</h4><p>Simple drills to improve steadiness, step confidence, and obstacle navigation.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Build balance</a></article>
-        <article class="card" role="listitem" aria-labelledby="p5"><h4 id="p5">Pain Self‑Management</h4><p>Education on pacing, flare‑ups, and graded activity. <em>Not a diagnosis or treatment plan.</em></p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Learn pacing</a></article>
-        <article class="card" role="listitem" aria-labelledby="p6"><h4 id="p6">Recovery & Stress</h4><p>Breathing, relaxation, and sleep‑hygiene practices for better recovery between sessions.</p><a href="#" class="cta" style="display:inline-block;margin-top:.5rem">Recover better</a></article>
-      </div>
-      <p class="muted">Prefer guided care? <a href="https://luminousrehab.com" target="_blank" rel="noopener">Connect with Luminous Rehab</a>.</p>
-    </section>
+        const programGrid = document.getElementById('program-grid');
 
-    <!-- HOW IT WORKS -->
-    <section id="how" aria-labelledby="how-title">
-      <h3 id="how-title">How it works</h3>
-      <div class="grid cols-3">
-        <div class="card"><strong>1) Pick a focus</strong><p>Choose mobility, posture, strength, balance, or recovery.</p></div>
-        <div class="card"><strong>2) Start small</strong><p>10–15 minutes per session, 2–3× weekly; add time slowly.</p></div>
-        <div class="card"><strong>3) Track & adjust</strong><p>Note energy, sleep, and soreness to guide next steps.</p></div>
-      </div>
-    </section>
+        function renderPrograms(filter = 'all') {
+            programGrid.innerHTML = '';
+            const filteredPrograms = filter === 'all' ? programs : programs.filter(p => p.category === filter);
+            
+            filteredPrograms.forEach((program, index) => {
+                const card = document.createElement('div');
+                card.className = `program-card bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300 fade-in-up`;
+                card.dataset.category = program.category;
+                card.style.transitionDelay = `${index * 100}ms`;
 
-    <!-- RESOURCES -->
-    <section id="resources" aria-labelledby="resources-title">
-      <h3 id="resources-title">Helpful resources</h3>
-      <div class="grid cols-3">
-        <article class="card"><h4>Desk Setup Checklist</h4><p class="muted">Seat height, monitor level, and movement breaks.</p><a href="#">Read guide</a></article>
-        <article class="card"><h4>5‑Minute Hip Reset</h4><p class="muted">Gentle opener for sitting stiffness—no equipment.</p><a href="#">Try routine</a></article>
-        <article class="card"><h4>Balance Basics</h4><p class="muted">Simple progressions to build confidence.</p><a href="#">Start here</a></article>
-      </div>
-    </section>
+                card.innerHTML = `
+                    <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="${program.icon}" class="w-8 h-8 text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">${program.title}</h3>
+                    <p class="mt-3 text-slate-600">${program.description}</p>
+                    <a href="#" class="inline-block mt-6 text-teal-600 font-semibold group">
+                        ${program.cta}
+                        <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
+                    </a>
+                `;
+                programGrid.appendChild(card);
+            });
+            lucide.createIcons(); // Re-render icons after adding them to the DOM
+            // Trigger animation for newly added cards
+            setTimeout(() => {
+                 document.querySelectorAll('.program-card.fade-in-up').forEach(el => el.classList.add('visible'));
+            }, 10);
+        }
 
-    <!-- FAQ -->
-    <section id="faq" aria-labelledby="faq-title">
-      <h3 id="faq-title">FAQ</h3>
-      <details><summary><strong>Is this medical advice?</strong></summary><p>No. This site is for general education. For diagnosis or treatment, consult a licensed clinician.</p></details>
-      <details><summary><strong>Do I need special equipment?</strong></summary><p>A mat, a stable chair, and a light resistance band are enough to start.</p></details>
-      <details><summary><strong>How fast will I see results?</strong></summary><p>Consistency matters most. Many people feel improvements in comfort and confidence in a few weeks.</p></details>
-    </section>
+        // --- INTERACTIVITY ---
 
-    <!-- CONTACT / OUTLINKS -->
-    <section id="contact" aria-labelledby="contact-title">
-      <h3 id="contact-title">Contact & next steps</h3>
-      <div class="grid cols-2">
-        <form class="card" method="post" action="#" onsubmit="event.preventDefault();alert('Thanks! Demo only. For appointments, visit Luminous Rehab.');">
-          <label for="name">Name</label>
-          <input id="name" name="name" required style="width:100%;padding:.7rem;border:1px solid var(--border);border-radius:12px" />
-          <label for="email" style="display:block;margin-top:.5rem">Email</label>
-          <input id="email" type="email" name="email" required style="width:100%;padding:.7rem;border:1px solid var(--border);border-radius:12px" />
-          <label for="msg" style="display:block;margin-top:.5rem">Message</label>
-          <textarea id="msg" name="message" rows="4" style="width:100%;padding:.7rem;border:1px solid var(--border);border-radius:12px"></textarea>
-          <button class="cta" style="margin-top:.75rem" type="submit">Send</button>
-          <p class="muted" style="margin:.5rem 0 0">For clinical appointments, visit <a href="https://luminousrehab.com" target="_blank" rel="noopener">luminousrehab.com</a>.</p>
-        </form>
-        <div class="card">
-          <p><strong>Ready for guided care?</strong></p>
-          <p>Go to <a href="https://luminousrehab.com" target="_blank" rel="noopener">Luminous Rehab</a> for official contact details and booking.</p>
-          <p class="muted">External links open in a new tab.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-  <footer role="contentinfo">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Wellness Programs Hub. Educational content only. All trademarks belong to their owners.</p>
-      <p class="muted">This site links to <a href="https://luminousrehab.com" target="_blank" rel="noopener">luminousrehab.com</a> for additional information.</p>
-    </div>
-  </footer>
+        // Program Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-teal-500', 'text-white');
+                    btn.classList.add('bg-white', 'text-slate-600');
+                });
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+                button.classList.add('active', 'bg-teal-500', 'text-white');
+                button.classList.remove('bg-white', 'text-slate-600');
+                
+                renderPrograms(filter);
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('open');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+                        otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                if (isOpen) {
+                    item.classList.remove('open');
+                    answer.style.maxHeight = '0px';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const formSubmittedMessage = document.getElementById('form-submitted-message');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formSubmittedMessage.style.opacity = '1';
+            formSubmittedMessage.style.transform = 'scale(1)';
+            formSubmittedMessage.style.pointerEvents = 'auto';
+
+            setTimeout(() => {
+                formSubmittedMessage.style.opacity = '0';
+                formSubmittedMessage.style.transform = 'scale(0.95)';
+                formSubmittedMessage.style.pointerEvents = 'none';
+                contactForm.reset();
+            }, 4000);
+        });
+        
+        // On Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initial render of programs
+        renderPrograms();
+
+    </script>
 </body>
 </html>
