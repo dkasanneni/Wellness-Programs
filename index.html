@@ -129,7 +129,7 @@
       <div class="mt-8 flex flex-wrap gap-4">
         <a href="#programs"
            class="bg-teal-500 text-white font-semibold px-8 py-3 rounded-full hover:bg-teal-600 transition-all shadow-lg hover:shadow-teal-200 transform hover:-translate-y-1">
-          Explore Our Programs
+          Explore Our Categories
         </a>
         <a href="#contact"
            class="bg-white text-slate-700 font-semibold px-8 py-3 rounded-full hover:bg-slate-100 transition-all shadow-sm border border-slate-200">
@@ -152,8 +152,8 @@
         <section id="programs" class="py-20 md:py-28 bg-white" aria-labelledby="programs-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto fade-in-up">
-                    <h2 id="programs-heading" class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Featured wellness programs</h2>
-                    <p class="mt-4 text-lg text-slate-600">Start light (10–15 minutes), 2–3× per week. Progress gradually and track how you feel.</p>
+                    <h2 id="programs-heading" class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Choose Your Path</h2>
+                    <p class="mt-4 text-lg text-slate-600">Move better. Feel better. Live better</p>
                 </div>
                 
                 <div id="service-boxes" class="grid grid-cols-2 lg:grid-cols-4 gap-6 my-12 fade-in-up" style="transition-delay: 200ms;">
@@ -425,6 +425,199 @@
             { id: 13, title: 'Nutrition and Healthy Eating', category: 'preventive-sub', superCategory: 'preventive', icon: 'carrot', description: 'Guidance on creating balanced meals and healthy eating habits to support your wellness goals.', cta: 'Learn More' },
         ];
 
+          // POPUP CONTENT FOR EACH PROGRAM
+const PROGRAM_DETAILS = {
+  1: { // Mobility & Flexibility
+    html: `
+      <h4 class="font-semibold text-slate-800">What it helps</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Stiff neck/shoulders/hips from sitting</li>
+        <li>Morning tightness; post-workout recovery</li>
+      </ul>
+      <h4 class="font-semibold mt-4 text-slate-800">How to do it (10–15 min)</h4>
+      <ol class="list-decimal pl-5 space-y-1 text-slate-600">
+        <li>Cat–camel × 8</li>
+        <li>Thread-the-needle × 6/side</li>
+        <li>Hip rocks + 90/90 switches × 8</li>
+        <li>Shoulder circles (CARs) × 5/side</li>
+        <li>Calf/hamstring stretch 30–40s each</li>
+      </ol>
+      <p class="mt-3 text-slate-600"><strong>Progress:</strong> smoother range; less morning stiffness.</p>
+      <p class="mt-2 text-xs text-slate-500">Tip: mild stretch only—no pain or bouncing.</p>
+    `
+  },
+  2: { // Posture & Ergonomics
+    html: `
+      <h4 class="font-semibold text-slate-800">Quick desk fixes</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Screen top at eye level; arm’s length</li>
+        <li>Elbows ~90°; feet flat; hips slightly above knees</li>
+        <li>Breaks: 30–60s every 30–45 min</li>
+      </ul>
+      <h4 class="font-semibold mt-4 text-slate-800">3-min micro-routine</h4>
+      <ol class="list-decimal pl-5 space-y-1 text-slate-600">
+        <li>Chin nods × 8</li>
+        <li>Shoulder-blade squeezes × 10</li>
+        <li>Doorway pec stretch 20–30s/side</li>
+        <li>Standing hip opener × 8/side</li>
+      </ol>
+      <p class="mt-3 text-slate-600"><strong>Progress:</strong> fewer end-of-day aches; better focus.</p>
+    `
+  },
+  3: { // Foundational Strength
+    html: `
+      <h4 class="font-semibold text-slate-800">Starter plan (2–3×/wk • 12–15 min)</h4>
+      <ol class="list-decimal pl-5 space-y-1 text-slate-600">
+        <li>Sit-to-stand / box squat × 8–12</li>
+        <li>Wall or incline push-ups × 6–10</li>
+        <li>Hip hinge pattern (RDL drill) × 10</li>
+        <li>Dead bug × 6/side</li>
+        <li>Side plank (knees) 15–25s/side</li>
+      </ol>
+      <p class="mt-3 text-slate-600"><strong>Progress:</strong> add 1–2 reps or a 2nd set weekly; keep 1–2 reps in reserve.</p>
+      <p class="mt-2 text-xs text-slate-500">Safety: smooth tempo; rest 45–60s.</p>
+    `
+  },
+  4: { // Balance & Fall Readiness
+    html: `
+      <h4 class="font-semibold text-slate-800">Drills (8–10 min)</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Feet-together → semi-tandem → tandem holds 30s</li>
+        <li>Single-leg stand 10–20s/side (support nearby)</li>
+        <li>Step-over line/cones × 10 (forward & side)</li>
+        <li>Head-turn walking 2×15–20 steps</li>
+      </ul>
+      <p class="mt-3 text-slate-600"><strong>Progress:</strong> longer holds; softer surface; fewer touches.</p>
+      <p class="mt-2 text-xs text-slate-500">Safety: clear floor; sturdy support within reach.</p>
+    `
+  },
+  5: { // Pain Self-Management
+    html: `
+      <h4 class="font-semibold text-slate-800">Core ideas</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li><strong>Pacing:</strong> break tasks into short bouts with rests</li>
+        <li><strong>Graded exposure:</strong> re-introduce activities slowly</li>
+        <li><strong>Flare plan:</strong> reduce intensity 20–40% for 48–72h; walk; breathe</li>
+      </ul>
+      <h4 class="font-semibold mt-4 text-slate-800">Daily 8–10 min</h4>
+      <ol class="list-decimal pl-5 space-y-1 text-slate-600">
+        <li>Diaphragmatic breathing 2 min</li>
+        <li>Gentle, area-specific mobility 4–6 min</li>
+        <li>Short walk or easy cycling 2–4 min</li>
+      </ol>
+      <p class="mt-3 text-xs text-slate-500">Educational content only; not a diagnosis or individualized treatment.</p>
+    `
+  },
+  6: { // Recovery & Stress
+    html: `
+      <h4 class="font-semibold text-slate-800">Reset (6–8 min)</h4>
+      <ol class="list-decimal pl-5 space-y-1 text-slate-600">
+        <li>Box breathing 4-4-4-4 × 6–8 cycles</li>
+        <li>Physiological sighs × 5</li>
+        <li>Body scan 2–3 min</li>
+      </ol>
+      <h4 class="font-semibold mt-4 text-slate-800">Sleep basics</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Consistent bed/wake time ±30 min</li>
+        <li>Dark/cool room; no screens for 60 min pre-bed</li>
+        <li>Caffeine cutoff ~8 h before bed</li>
+      </ul>
+    `
+  },
+  7: { // Screenings & Measurements
+    html: `
+      <h4 class="font-semibold text-slate-800">Track these basics</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Blood pressure (rested) & resting HR</li>
+        <li>Weight; waist:hip ratio or body composition</li>
+        <li>Weekly steps & active minutes</li>
+        <li>Pain/sleep/stress (0–10 quick scale)</li>
+      </ul>
+      <p class="mt-3 text-slate-600"><strong>Use it:</strong> set a baseline; re-check every 2–4 weeks to adjust your plan.</p>
+    `
+  },
+  8: { // Fitness Evaluations
+    html: `
+      <h4 class="font-semibold text-slate-800">Simple at-home checks</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li><strong>6-min walk:</strong> note distance & effort</li>
+        <li><strong>30-sec chair stand:</strong> count reps</li>
+        <li><strong>Grip strength:</strong> dynamometer or jar-test proxy</li>
+        <li><strong>Sit-and-reach:</strong> compare sides</li>
+        <li><strong>Single-leg balance:</strong> time each side</li>
+      </ul>
+      <p class="mt-3 text-slate-600"><strong>Re-test:</strong> every 4–6 weeks to see objective progress.</p>
+    `
+  },
+  9: { // Lifestyle Surveys
+    html: `
+      <h4 class="font-semibold text-slate-800">Questions that matter</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Sleep: hours, quality, regularity</li>
+        <li>Nutrition: produce, protein, hydration</li>
+        <li>Stress: sources & coping tools</li>
+        <li>Sitting time vs. movement breaks</li>
+        <li>Alcohol, nicotine, caffeine patterns</li>
+      </ul>
+      <p class="mt-3 text-slate-600"><strong>Action:</strong> choose <em>one</em> habit to improve for 2 weeks.</p>
+    `
+  },
+  10: { // Risk Assessments
+    html: `
+      <h4 class="font-semibold text-slate-800">Check your risks</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Medical history, meds, recent injuries</li>
+        <li>Home safety: rugs, lighting, stairs, grab bars</li>
+        <li>Falls: dizziness, vision, footwear</li>
+      </ul>
+      <h4 class="font-semibold mt-4 text-slate-800">Mitigate</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Start low impact; progress gradually</li>
+        <li>Use supports; train balance weekly</li>
+        <li>Seek clinician input if symptoms change</li>
+      </ul>
+    `
+  },
+  11: { // Stress Management
+    html: `
+      <h4 class="font-semibold text-slate-800">Daily 5-minute reset</h4>
+      <ol class="list-decimal pl-5 space-y-1 text-slate-600">
+        <li>Nasal breathing 3s in / 4–6s out × 2 min</li>
+        <li>Box breathing 4-4-4-4 × 8 cycles</li>
+        <li>Light stretch or 5-min walk</li>
+      </ol>
+      <p class="mt-3 text-slate-600"><strong>Habits:</strong> morning light, regular meals, brief evening wind-down.</p>
+    `
+  },
+  12: { // Fall & Injury Prevention
+    html: `
+      <h4 class="font-semibold text-slate-800">Home safety sweep</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Clear walkways; secure rugs & cords</li>
+        <li>Night lights; non-slip bath mats</li>
+        <li>Sturdy shoes; avoid loose slippers</li>
+      </ul>
+      <h4 class="font-semibold mt-4 text-slate-800">Weekly practice</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>Heel-toe (tandem) walk 2×10–15 steps</li>
+        <li>Sit-to-stand × 8–12; calf raises × 12–15</li>
+        <li>Head-turn balance holds 10–20s</li>
+      </ul>
+    `
+  },
+  13: { // Nutrition & Healthy Eating
+    html: `
+      <h4 class="font-semibold text-slate-800">Simple plate guide</h4>
+      <ul class="list-disc pl-5 space-y-1 text-slate-600">
+        <li>½ veggies/fruit • ¼ protein • ¼ carbs</li>
+        <li>Protein (rule-of-thumb): 1–1.6 g/kg/day*</li>
+        <li>Hydration: aim for pale-yellow urine</li>
+        <li>Snack ideas: fruit + nuts; yogurt; hummus + veg</li>
+      </ul>
+      <p class="mt-3 text-xs text-slate-500">*General guidance only—adjust for medical needs or clinician advice.</p>
+    `
+  }
+};
         const resources = [
             { id: 1, title: 'Desk Setup Checklist', icon: 'monitor-check', description: 'A comprehensive guide to optimizing your workspace for better posture and reduced strain. Covers monitor height, chair adjustments, keyboard placement, and the importance of regular movement breaks to keep you comfortable and productive.'},
             { id: 2, title: '5-Minute Hip Reset', icon: 'person-standing', description: 'A quick and gentle routine designed to counteract the effects of prolonged sitting. These simple stretches help release tension in the hips, improve flexibility, and can be done anywhere without any special equipment.'},
@@ -476,14 +669,17 @@
         }
 
         function openModal(item) {
-            modalTitle.textContent = item.title;
-            modalContent.innerHTML = `<p>${item.description}</p><p class="mt-4 text-sm text-slate-500"><em>This is a demo. Full program details, videos, and tips would appear here.</em></p>`;
-            modalIconContainer.innerHTML = `<i data-lucide="${item.icon}" class="w-8 h-8 text-teal-600"></i>`;
-            lucide.createIcons();
-            
-            programModal.classList.remove('pointer-events-none', 'opacity-0');
-            modalPanel.classList.remove('scale-95');
-        }
+  modalTitle.textContent = item.title;
+  const extra = PROGRAM_DETAILS[item.id]?.html || `<p>${item.description}</p>`;
+  modalContent.innerHTML = `
+    ${extra}
+    <p class="mt-4 text-xs text-slate-500"><em>Educational content only. Consult a licensed clinician for personal medical advice.</em></p>
+  `;
+  modalIconContainer.innerHTML = `<i data-lucide="${item.icon}" class="w-8 h-8 text-teal-600"></i>`;
+  lucide.createIcons();
+  programModal.classList.remove('pointer-events-none', 'opacity-0');
+  modalPanel.classList.remove('scale-95');
+}
 
         function closeModal() {
             programModal.classList.add('opacity-0');
