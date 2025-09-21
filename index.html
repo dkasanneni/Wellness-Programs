@@ -2,10 +2,31 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device--width, initial-scale=1.0">
-    <title>Wellness Programs Hub | Move Better. Feel Better.</title>
-    <meta name="description" content="Discover simple, evidence-informed wellness programs for mobility, posture, strength, balance, and recovery.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- SEO Meta Tags -->
+    <title>Wellness Programs Hub | Health Assessments & Exercise Plans</title>
+    <meta name="description" content="Explore personalized wellness with our Health Assessments, Exercise Programs, Lifestyle Coaching, and Preventive Care. Start your journey to better health today.">
+    <meta name="keywords" content="wellness programs, health assessment, exercise programs, lifestyle coaching, preventive care, mobility, strength training, stress management, nutrition">
+    <meta name="author" content="Wellness Programs Hub">
+    <link rel="canonical" href="https://your-website-url.com/"> <!-- IMPORTANT: Update this with your actual domain -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-website-url.com/">
+    <meta property="og:title" content="Wellness Programs Hub | Health Assessments & Exercise Plans">
+    <meta property="og:description" content="Explore personalized wellness programs for mobility, strength, and stress management. Start with our guided health assessments.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80">
+    <meta property="og:site_name" content="Wellness Programs Hub">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://your-website-url.com/">
+    <meta name="twitter:title" content="Wellness Programs Hub | Health Assessments & Exercise Plans">
+    <meta name="twitter:description" content="Explore personalized wellness programs for mobility, strength, and stress management. Start with our guided health assessments.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -16,6 +37,61 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Wellness Programs Hub",
+      "url": "https://your-website-url.com/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Wellness Programs Hub",
+      "url": "https://your-website-url.com/",
+      "logo": "URL_TO_YOUR_LOGO.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this medical advice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This site is for general education. For diagnosis or treatment, consult a licensed clinician."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need special equipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A mat, a stable chair, and a light resistance band are enough to start."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast will I see results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consistency matters most. Many people feel improvements in comfort and confidence in a few weeks."
+          }
+        }
+      ]
+    }
+    </script>
 
     <style>
         body {
@@ -53,7 +129,7 @@
     </style>
 </head>
 <body class="antialiased">
-
+    <a href="#main" class="absolute left-[-9999px] top-auto w-px h-px overflow-hidden focus:left-auto focus:top-auto focus:w-auto focus:h-auto focus:p-4 focus:m-2 focus:bg-white focus:text-slate-900 focus:rounded-lg focus:shadow-lg focus:z-50">Skip to main content</a>
     <!-- Header -->
     <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -70,9 +146,6 @@
                 <a href="#resources" class="text-slate-600 hover:text-teal-600 transition-colors">Resources</a>
                 <a href="#contact" class="text-slate-600 hover:text-teal-600 transition-colors">Contact</a>
             </nav>
-            <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="hidden md:inline-block bg-teal-500 text-white font-semibold px-5 py-2 rounded-full hover:bg-teal-600 transition-all shadow-sm hover:shadow-md">
-                Visit Luminous Rehab
-            </a>
             <button id="mobile-menu-button" class="md:hidden text-slate-600">
                 <i data-lucide="menu"></i>
             </button>
@@ -84,20 +157,17 @@
             <a href="#journey" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Journey to Wellness</a>
             <a href="#resources" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Resources</a>
             <a href="#contact" class="block text-slate-600 hover:text-teal-600 transition-colors py-2">Contact</a>
-            <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="block bg-teal-500 text-white font-semibold px-5 py-2 rounded-full hover:bg-teal-600 transition-all text-center mt-2">
-                Visit Luminous Rehab
-            </a>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- Hero Section -->
-        <section id="hero" class="relative py-20 md:py-32 overflow-hidden">
+        <section id="hero" class="relative py-20 md:py-32 overflow-hidden" aria-labelledby="hero-heading">
             <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative">
                 <div class="fade-in-up">
                     <span class="inline-block bg-teal-100 text-teal-700 text-sm font-semibold px-4 py-1 rounded-full mb-4">Wellness • Rehab Principles • Home-friendly</span>
-                    <h1 class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight tracking-tighter">
+                    <h1 id="hero-heading" class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight tracking-tighter">
                         Simple programs to move better—at home or on the go.
                     </h1>
                     <p class="mt-6 text-lg text-slate-600 max-w-lg">
@@ -119,10 +189,10 @@
         </section>
 
         <!-- Programs Section -->
-        <section id="programs" class="py-20 md:py-28 bg-white">
+        <section id="programs" class="py-20 md:py-28 bg-white" aria-labelledby="programs-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Featured wellness programs</h2>
+                    <h2 id="programs-heading" class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Featured wellness programs</h2>
                     <p class="mt-4 text-lg text-slate-600">Start light (10–15 minutes), 2–3× per week. Progress gradually and track how you feel.</p>
                 </div>
                 
@@ -160,10 +230,10 @@
         </section>
 
         <!-- Your Journey Section -->
-        <section id="journey" class="py-20 md:py-28">
+        <section id="journey" class="py-20 md:py-28" aria-labelledby="journey-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Your Journey to Wellness</h2>
+                    <h2 id="journey-heading" class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Your Journey to Wellness</h2>
                     <p class="mt-4 text-lg text-slate-600">A simple, personalized path to building better health habits.</p>
                 </div>
 
@@ -223,10 +293,10 @@
         </section>
 
         <!-- Resources Section -->
-        <section id="resources" class="py-20 md:py-28 bg-white">
+        <section id="resources" class="py-20 md:py-28 bg-white" aria-labelledby="resources-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Helpful resources</h2>
+                    <h2 id="resources-heading" class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Helpful resources</h2>
                 </div>
                 <div id="resources-grid" class="grid md:grid-cols-3 gap-8 mt-12 fade-in-up" style="transition-delay: 200ms;">
                     <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300">
@@ -258,10 +328,10 @@
         </section>
 
         <!-- Contact & FAQ Section -->
-        <section id="contact" class="py-20 md:py-28 bg-slate-900 text-white">
+        <section id="contact" class="py-20 md:py-28 bg-slate-900 text-white" aria-labelledby="contact-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto fade-in-up mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Have Questions? Get in Touch</h2>
+                    <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold tracking-tight">Have Questions? Get in Touch</h2>
                     <p class="mt-4 text-lg text-slate-300">Review our frequently asked questions. If you can't find the answer, feel free to send us a message.</p>
                 </div>
 
@@ -356,11 +426,23 @@
     <footer class="bg-white border-t border-slate-200">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
             <p>&copy; <span id="year"></span> Wellness Programs Hub. Educational content only. All trademarks belong to their owners.</p>
+            <p class="text-sm mt-4">
+                Follow us on 
+                <a href="#" class="inline-flex items-center hover:text-teal-600">
+                    <i data-lucide="twitter" class="w-4 h-4 mr-1"></i>Twitter
+                </a> 
+                and 
+                <a href="#" class="inline-flex items-center hover:text-teal-600">
+                    <i data-lucide="instagram" class="w-4 h-4 mr-1"></i>Instagram
+                </a> 
+                to stay updated with our latest programs and wellness tips.
+            </p>
             <p class="text-sm mt-2">This site links to <a href="https://luminousrehab.com" target="_blank" rel="noopener" class="hover:text-teal-600">luminousrehab.com</a> for additional information.</p>
         </div>
     </footer>
 
     <script>
+      window.addEventListener('DOMContentLoaded', () => {
         // --- LUCIDE ICONS ---
         lucide.createIcons();
 
@@ -604,7 +686,7 @@
             renderPrograms(''); // Render empty if default not found
         }
         lucide.createIcons();
-
+      });
     </script>
 </body>
 </html>
