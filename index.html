@@ -46,6 +46,10 @@
         .service-filter-box.active i {
             color: white;
         }
+        .how-it-works-tab.active {
+            color: #14b8a6; /* teal-500 */
+            border-color: #14b8a6; /* teal-500 */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -159,33 +163,62 @@
         <section id="how" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">How it works</h2>
-                    <p class="mt-4 text-lg text-slate-600">A simple, structured approach to building better habits.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Your Journey to Wellness</h2>
+                    <p class="mt-4 text-lg text-slate-600">A simple, personalized path to building better health habits.</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 md:gap-12 mt-16 text-center">
-                    <div class="fade-in-up" style="transition-delay: 0ms;">
-                        <div class="bg-white p-6 rounded-full w-20 h-20 mx-auto flex items-center justify-center shadow-lg">
-                           <i data-lucide="crosshair" class="w-10 h-10 text-teal-500"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800 mt-6">1) Pick a focus</h3>
-                        <p class="mt-2 text-slate-600">Choose mobility, posture, strength, balance, or recovery.</p>
+                <div class="max-w-4xl mx-auto mt-16 fade-in-up" style="transition-delay: 200ms;">
+                    <!-- Interactive Tabs -->
+                    <div id="how-it-works-tabs" class="flex justify-center border-b border-slate-200">
+                        <button data-tab="1" class="how-it-works-tab flex-1 md:flex-none font-semibold text-slate-600 py-4 px-6 border-b-2 border-transparent transition-colors duration-300 active">1. Assess Your Needs</button>
+                        <button data-tab="2" class="how-it-works-tab flex-1 md:flex-none font-semibold text-slate-600 py-4 px-6 border-b-2 border-transparent transition-colors duration-300">2. Choose a Program</button>
+                        <button data-tab="3" class="how-it-works-tab flex-1 md:flex-none font-semibold text-slate-600 py-4 px-6 border-b-2 border-transparent transition-colors duration-300">3. Build Consistency</button>
                     </div>
-                    <div class="fade-in-up" style="transition-delay: 200ms;">
-                        <div class="bg-white p-6 rounded-full w-20 h-20 mx-auto flex items-center justify-center shadow-lg">
-                            <i data-lucide="move-up" class="w-10 h-10 text-teal-500"></i>
+
+                    <!-- Tab Content -->
+                    <div id="how-it-works-content" class="mt-8">
+                        <div data-content="1" class="tab-content grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-800">Start with a Clear Baseline</h3>
+                                <p class="mt-4 text-slate-600">Use our Health Assessments to understand your current fitness, lifestyle habits, and potential risks. This foundational step ensures your wellness journey is tailored to you.</p>
+                                <ul class="mt-4 space-y-2 text-slate-600">
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 mt-1 shrink-0"></i><span>Complete fitness evaluations and lifestyle surveys.</span></li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 mt-1 shrink-0"></i><span>Identify areas for improvement and set meaningful goals.</span></li>
+                                </ul>
+                            </div>
+                             <div class="bg-teal-50 p-6 rounded-2xl">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" class="rounded-lg shadow-md" alt="Person writing in a health journal." />
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-800 mt-6">2) Start small</h3>
-                        <p class="mt-2 text-slate-600">10–15 minutes per session, 2–3× weekly; add time slowly.</p>
-                    </div>
-                     <div class="fade-in-up" style="transition-delay: 400ms;">
-                        <div class="bg-white p-6 rounded-full w-20 h-20 mx-auto flex items-center justify-center shadow-lg">
-                           <i data-lucide="clipboard-check" class="w-10 h-10 text-teal-500"></i>
+                        <div data-content="2" class="tab-content grid md:grid-cols-2 gap-8 items-center hidden">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-800">Select Your Personalized Path</h3>
+                                <p class="mt-4 text-slate-600">Based on your assessment, explore our library of expert-designed programs. Whether you need structured exercise, lifestyle coaching, or preventive care, we have a plan for you.</p>
+                                <ul class="mt-4 space-y-2 text-slate-600">
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 mt-1 shrink-0"></i><span>Filter programs based on your goals and assessment results.</span></li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 mt-1 shrink-0"></i><span>Each program offers clear, step-by-step guidance.</span></li>
+                                </ul>
+                            </div>
+                             <div class="bg-teal-50 p-6 rounded-2xl">
+                                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" class="rounded-lg shadow-md" alt="Woman doing yoga exercise at home." />
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-800 mt-6">3) Track & adjust</h3>
-                        <p class="mt-2 text-slate-600">Note energy, sleep, and soreness to guide next steps.</p>
+                        <div data-content="3" class="tab-content grid md:grid-cols-2 gap-8 items-center hidden">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-800">Track Progress & Stay Motivated</h3>
+                                <p class="mt-4 text-slate-600">True change comes from consistency. Follow your program, track how you feel, and celebrate your progress. Adjust as needed to keep moving forward.</p>
+                                 <ul class="mt-4 space-y-2 text-slate-600">
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 mt-1 shrink-0"></i><span>Start with 10-15 minute sessions, 2-3 times per week.</span></li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mr-3 mt-1 shrink-0"></i><span>Listen to your body and adjust the intensity as you get stronger.</span></li>
+                                </ul>
+                            </div>
+                             <div class="bg-teal-50 p-6 rounded-2xl">
+                                <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80" class="rounded-lg shadow-md" alt="Person tracking fitness progress on a phone." />
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -195,11 +228,11 @@
                 <div class="text-center max-w-3xl mx-auto fade-in-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Helpful resources</h2>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8 mt-12 fade-in-up" style="transition-delay: 200ms;">
+                <div id="resources-grid" class="grid md:grid-cols-3 gap-8 mt-12 fade-in-up" style="transition-delay: 200ms;">
                     <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300">
                         <h3 class="text-xl font-bold text-slate-800">Desk Setup Checklist</h3>
                         <p class="mt-3 text-slate-600">Seat height, monitor level, and movement breaks.</p>
-                        <a href="#" class="inline-block mt-6 text-teal-600 font-semibold group">
+                        <a href="#" class="resource-cta inline-block mt-6 text-teal-600 font-semibold group" data-id="1">
                             Read guide
                             <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
                         </a>
@@ -207,7 +240,7 @@
                     <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300">
                         <h3 class="text-xl font-bold text-slate-800">5-Minute Hip Reset</h3>
                         <p class="mt-3 text-slate-600">Gentle opener for sitting stiffness—no equipment.</p>
-                        <a href="#" class="inline-block mt-6 text-teal-600 font-semibold group">
+                        <a href="#" class="resource-cta inline-block mt-6 text-teal-600 font-semibold group" data-id="2">
                             Try routine
                             <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
                         </a>
@@ -215,7 +248,7 @@
                     <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300">
                         <h3 class="text-xl font-bold text-slate-800">Balance Basics</h3>
                         <p class="mt-3 text-slate-600">Simple progressions to build confidence.</p>
-                        <a href="#" class="inline-block mt-6 text-teal-600 font-semibold group">
+                        <a href="#" class="resource-cta inline-block mt-6 text-teal-600 font-semibold group" data-id="3">
                             Start here
                             <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
                         </a>
@@ -354,8 +387,14 @@
             { id: 13, title: 'Nutrition and Healthy Eating', category: 'preventive-sub', superCategory: 'preventive', icon: 'carrot', description: 'Guidance on creating balanced meals and healthy eating habits to support your wellness goals.', cta: 'Learn More' },
         ];
 
+        const resources = [
+            { id: 1, title: 'Desk Setup Checklist', icon: 'monitor-check', description: 'A comprehensive guide to optimizing your workspace for better posture and reduced strain. Covers monitor height, chair adjustments, keyboard placement, and the importance of regular movement breaks to keep you comfortable and productive.'},
+            { id: 2, title: '5-Minute Hip Reset', icon: 'person-standing', description: 'A quick and gentle routine designed to counteract the effects of prolonged sitting. These simple stretches help release tension in the hips, improve flexibility, and can be done anywhere without any special equipment.'},
+            { id: 3, title: 'Balance Basics', icon: 'footprints', description: 'An introduction to foundational balance exercises. This guide provides simple, safe progressions to help you build confidence, improve stability, and reduce the risk of falls, supporting your overall mobility and independence.'}
+        ];
+
         const programGrid = document.getElementById('program-grid');
-        const serviceBoxesContainer = document.getElementById('service-boxes');
+        const resourcesGrid = document.getElementById('resources-grid');
         const programModal = document.getElementById('program-modal');
         const modalPanel = document.getElementById('modal-panel');
         const closeModalButton = document.getElementById('close-modal-button');
@@ -398,17 +437,17 @@
             }, 10);
         }
 
-        function openProgramModal(program) {
-            modalTitle.textContent = program.title;
-            modalContent.innerHTML = `<p>${program.description}</p><p class="mt-4 text-sm text-slate-500"><em>This is a demo. Full program details, videos, and tips would appear here.</em></p>`;
-            modalIconContainer.innerHTML = `<i data-lucide="${program.icon}" class="w-8 h-8 text-teal-600"></i>`;
+        function openModal(item) {
+            modalTitle.textContent = item.title;
+            modalContent.innerHTML = `<p>${item.description}</p><p class="mt-4 text-sm text-slate-500"><em>This is a demo. Full program details, videos, and tips would appear here.</em></p>`;
+            modalIconContainer.innerHTML = `<i data-lucide="${item.icon}" class="w-8 h-8 text-teal-600"></i>`;
             lucide.createIcons();
             
             programModal.classList.remove('pointer-events-none', 'opacity-0');
             modalPanel.classList.remove('scale-95');
         }
 
-        function closeProgramModal() {
+        function closeModal() {
             programModal.classList.add('opacity-0');
             modalPanel.classList.add('scale-95');
             setTimeout(() => {
@@ -449,22 +488,60 @@
                 const programId = parseInt(ctaButton.dataset.id, 10);
                 const program = programs.find(p => p.id === programId);
                 if (program) {
-                    openProgramModal(program);
+                    openModal(program);
                 }
             }
         });
 
-        closeModalButton.addEventListener('click', closeProgramModal);
+        // Resource Card Modal Logic
+        resourcesGrid.addEventListener('click', (e) => {
+            const ctaButton = e.target.closest('.resource-cta');
+            if(ctaButton) {
+                e.preventDefault();
+                const resourceId = parseInt(ctaButton.dataset.id, 10);
+                const resource = resources.find(r => r.id === resourceId);
+                if (resource) {
+                    openModal(resource);
+                }
+            }
+        });
+
+        closeModalButton.addEventListener('click', closeModal);
         programModal.addEventListener('click', (e) => {
             if (e.target === programModal) {
-                closeProgramModal();
+                closeModal();
             }
         });
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !programModal.classList.contains('pointer-events-none')) {
-                closeProgramModal();
+                closeModal();
             }
         });
+
+        // How It Works Tabs
+        const tabsContainer = document.getElementById('how-it-works-tabs');
+        const contentContainer = document.getElementById('how-it-works-content');
+        const tabs = tabsContainer.querySelectorAll('.how-it-works-tab');
+        const contents = contentContainer.querySelectorAll('.tab-content');
+
+        tabsContainer.addEventListener('click', (e) => {
+            const clickedTab = e.target.closest('button');
+            if (!clickedTab) return;
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            clickedTab.classList.add('active');
+
+            const tabNumber = clickedTab.dataset.tab;
+            contents.forEach(content => {
+                if (content.dataset.content === tabNumber) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+            lucide.createIcons();
+        });
+
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
