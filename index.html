@@ -9,7 +9,9 @@
   <meta name="description" content="Practical wellness programs: assessments, exercise, lifestyle coaching, and preventive care. Start simple and build healthy habits.">
   <meta name="keywords" content="wellness programs, health assessment, exercise programs, lifestyle coaching, preventive care, mobility, strength training, stress management, nutrition">
   <meta name="author" content="Wellness Programs Hub">
+  <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://dkasanneni.github.io/Wellness-Programs/">
+  <link rel="sitemap" type="application/xml" href="/Wellness-Programs/sitemap.xml">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -18,6 +20,7 @@
   <meta property="og:description" content="Explore personalized wellness programs for mobility, strength, and stress management. Start with our guided health assessments.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80">
   <meta property="og:site_name" content="Wellness Programs Hub">
+  <meta property="og:updated_time" content="2025-09-28T10:00:00-07:00">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -26,14 +29,17 @@
   <meta name="twitter:description" content="Explore personalized wellness programs for mobility, strength, and stress management. Start with our guided health assessments.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80">
 
-  <!-- Preconnects -->
+  <!-- Preconnects / Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="//unpkg.com">
+  <meta name="theme-color" content="#0f766e">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS (CDN, deferred to reduce parser blocking) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
   <!-- Google Fonts: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -138,7 +144,8 @@
           <p class="mt-6 text-lg text-slate-600 max-w-lg">
             We believe wellness should be simple, accessible, and practical.
             Our programs support everyday life—whether you’re improving mobility, building strength,
-            managing stress, or preventing injury. Professional guidance, plain language, easy to follow.
+            managing stress, or preventing injury. See the <a href="#programs" class="underline underline-offset-2">program categories</a> or jump to
+            <a href="#resources" class="underline underline-offset-2">evidence-based resources</a>.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="#programs" class="bg-teal-500 text-white font-semibold px-8 py-3 rounded-full hover:bg-teal-600 transition-all shadow-lg hover:shadow-teal-200 transform hover:-translate-y-1">Explore Our Categories</a>
@@ -202,7 +209,11 @@
       <div class="container mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto fade-in-up">
           <h2 id="journey-heading" class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Your Journey to Wellness</h2>
-          <p class="mt-4 text-lg text-slate-600">A simple, personalized path to building better health habits.</p>
+          <p class="mt-4 text-lg text-slate-600">
+            A simple, personalized path to building better health habits. Start with an
+            <a href="#journey" class="underline underline-offset-2">assessment</a>, then pick a
+            <a href="#programs" class="underline underline-offset-2">program</a>.
+          </p>
         </div>
 
         <div class="max-w-4xl mx-auto mt-16 fade-in-up" style="transition-delay: 200ms;">
@@ -264,6 +275,12 @@
       <div class="container mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto fade-in-up">
           <h2 id="resources-heading" class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Helpful Resources</h2>
+          <p class="mt-6 text-slate-600">
+            Learn more from the
+            <a href="https://www.cdc.gov/physical-activity-basics/" target="_blank" rel="noopener" class="underline underline-offset-2">CDC Physical Activity Basics</a>
+            and the
+            <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" rel="noopener" class="underline underline-offset-2">WHO: Physical Activity</a>.
+          </p>
         </div>
         <div id="resources-grid" class="grid md:grid-cols-3 gap-8 mt-12 fade-in-up" style="transition-delay: 200ms;">
           <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100 hover:shadow-xl hover:shadow-slate-200 hover:-translate-y-2 transition-all duration-300">
