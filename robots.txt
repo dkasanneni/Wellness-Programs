@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dkasanneni.github.io/Wellness-Programs/sitemap.xml
